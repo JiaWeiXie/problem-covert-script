@@ -19,10 +19,10 @@ $ python main.py example/1101B4 -vv
 
 
 # Ignore input test data first line
-$ python main.py example/1101B2 -g
+$ python main.py example/1101B2 -l
 
 # Ignore input test data two lines
-$ python main.py <problem> -gg
+$ python main.py <problem> -ll
 
 # Specify output path
 $ python main.py example/1101B4 -o <path>
