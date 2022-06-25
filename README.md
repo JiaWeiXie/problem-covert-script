@@ -41,3 +41,80 @@ optional arguments:
   -l, --lines           ignore input testcase lines, -l: one line, -ll: two lines.
   -v, --verbose         -v: INFO, -vv: DEBUG, default: WARNING.
 ```
+
+## Testcase format
+
+### example 1
+
+1.in
+```
+1 1
+2 2
+```
+
+1.ans
+```
+2
+4
+```
+
+convert
+
+101.in
+```
+1 1
+```
+
+102.in
+```
+2 2
+```
+
+101.ans
+```
+4
+```
+
+102.ans
+```
+2
+```
+
+### example 2
+
+`$ python main.py <problem> -l`
+
+1.in
+```
+2
+1 1
+2 2
+```
+
+1.ans
+```
+2
+4
+```
+
+convert
+
+101.in
+```
+1 1
+```
+
+102.in
+```
+2 2
+```
+
+101.ans
+```
+4
+```
+
+102.ans
+```
+2
+```
