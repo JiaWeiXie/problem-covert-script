@@ -326,10 +326,10 @@ if __name__ == "__main__":
     try:
         if file_path.is_file and "zip" in file_path.name:
             logger.debug(f"Open a problem zip file, {file_path.name}")
-            handler = MultiToSingleTestCase(file_path, base_path, logger, lines)
+            convertor = MultiToSingleTestCase(file_path, base_path, logger, lines)
         else:
             logger.debug(f"Open a problem folder, {file_path.name}")
-            handler = MultiToSingleTestCase.from_folder(
+            convertor = MultiToSingleTestCase.from_folder(
                 file_path,
                 base_path,
                 logger,
@@ -341,13 +341,13 @@ if __name__ == "__main__":
         exit(0)
 
     try:
-        handler.move_zip_source_dir()
-        testcase_collection = handler.collect_testcase()
+        convertor.move_zip_source_dir()
+        testcase_collection = convertor.collect_testcase()
         for testcase in testcase_collection:
-            handler.covert_testcase(testcase)
+            convertor.covert_testcase(testcase)
 
-        handler.archive_result()
+        convertor.archive_result()
     except Exception as e:
         logger.error(f"{e}")
-        handler.recover_zip_path()
-        handler.recover_folders()
+        convertor.recover_zip_path()
+        convertor.recover_folders()
